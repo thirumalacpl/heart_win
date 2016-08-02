@@ -7,14 +7,15 @@ $(document).on('pageshow', '#cond_patient_details', function(){
  var age_nn = document.getElementById('age_n').value;
  var gender_d = $('input:radio[name=gender_de]:checked').val();
   var mob_no = document.getElementById('mob_no').value;
+   //alert(pat_name+'pat_name');
 /*
   alert(pat_name+'pat_name');
   alert(age_nn+'age_nn');
   alert(gender_d+'gender_d');
   alert(mob_no+'mob_no');*/
-
+if(pat_name != ""){
 $.ajax({
-  url: "http://staging.eimpressive.com/slim/slim-heart/pat_detai_inser.php?pat_name="+pat_name+"&age_nn="+age_nn+"&gender_d="+gender_d+"&mob_no="+mob_no,
+  url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/pat_detai_inser.php?pat_name="+pat_name+"&age_nn="+age_nn+"&gender_d="+gender_d+"&mob_no="+mob_no,
   data:$('#pat_detai').serialize(),
   type: 'post',                   
   async: 'true',
@@ -52,7 +53,11 @@ console.log(error);
 alert('Network error has occurred please try again!');
 }
 });
-
+}
+else{
+  alert("Fill the empty fields" );
+  $.mobile.changePage($('#cond_patient_details'), { transition: "none", changeHash: true, reverse: false });
+}
 });
 
 

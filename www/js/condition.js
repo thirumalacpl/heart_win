@@ -4,7 +4,7 @@ $(document).on('pageshow', '#pageone', function(){
 
 $(document).off('click', '#emergency').on('click', '#emergency', function() {
 //alert('condition emergency but clcik');
-$.ajax({url: 'http://staging.eimpressive.com/slim/slim-heart/indextest.php?',
+$.ajax({url: 'http://staging.eimpressive.com/slim/slim-heart-mergedb/indextest.php?',
   data:$('#new').serialize(),
   type: 'post',                   
   async: 'true',
