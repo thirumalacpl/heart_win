@@ -29,9 +29,9 @@
                         },
                         success: function (result) {
 							console.log(result);
-							alert('Report Submitted Succesfully ');
-							//$('#basic').popup('open'); 
-							$.mobile.changePage($('#sear_nearby_mapp'), { transition: "none", changeHash: true, reverse: false });
+							//alert('Report Submitted Succesfully ');
+							$('#positionWindow').popup('open'); 
+							//$.mobile.changePage($('#sear_nearby_mapp'), { transition: "none", changeHash: true, reverse: false });
 							//$.mobile.changePage("two.html", { transition: "slide", changeHash: false, reverse: false });
 							return false;
                         },
@@ -48,6 +48,11 @@
 			 
 				});	
 				
+				$(document).off('click', '#sear_nearby_mappp').on('click', '#sear_nearby_mappp', function() { 
+	$.mobile.changePage($('#sear_nearby_mapp'), { transition: "none", changeHash: true, reverse: false });
+				return false;		
+				});
+
      });
 	 
 			

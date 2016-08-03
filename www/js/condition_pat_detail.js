@@ -34,6 +34,8 @@ $.ajax({
        sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));
         sessionStorage.setItem("question_emergency_array",JSON.stringify(result[1]));
     
+ 
+     document.getElementById('pat_name').value = '';
 
 $.mobile.loading().hide();
 $.mobile.changePage($('#question_li'), { transition: "none", changeHash: true, reverse: false });
